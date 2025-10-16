@@ -52,6 +52,31 @@
       background-color: #F8FAFC; /* slate-50 */
       color: #1E293B; /* slate-800 */
     }
+
+    /* Typing Loop Animation */
+    .typing-loop {
+      border-right: 2px solid #3B82F6;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+
+    @keyframes typingLoop {
+      0% { width: 0ch; }
+      40% { width: 15ch; }  /* Rhesa Ivander */
+      60% { width: 15ch; }
+      100% { width: 0ch; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .typing-loop {
+      animation: typingLoop 4s steps(15) infinite, blink 0.7s step-end infinite;
+    }
   </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
@@ -70,7 +95,9 @@
 <!-- Hero Section -->
 <section id="about" class="pt-32 text-center px-6" data-aos="fade-up">
   <img src="ejaa.jpg" alt="Profile" class="w-40 h-40 mx-auto rounded-full shadow-lg mb-6">
-  <h2 class="text-4xl font-bold mb-4">Hi, I'm Rhesa Ivander</h2>
+  <h2 class="text-4xl font-bold mb-4">
+    Hi, I'm <span class="typing-loop"></span>
+  </h2>
   <p class="text-lg mb-6">Fullstack Developer | HTML5, CSS, Tailwind, Bootstrap, PHP, Laravel, Vue.js</p>
   <a href="#projects" class="px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600 transition">View My Work</a>
 </section>
